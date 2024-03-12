@@ -3,15 +3,15 @@ import { useReducer } from 'react';
 const initialState = {
   num1: 0,
   num2: 0,
-  result: 0
+  result: 0,
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'add':
-      return { ...state, result: state.num1 + state.num2 };
+      return { ...state, result: parseFloat(state.num1) + parseFloat(state.num2) };
     case 'multiply':
-      return { ...state, result: state.num1 * state.num2 };
+      return { ...state, result: parseFloat(state.num1) * parseFloat(state.num2) };
     case 'reset':
       return initialState;
     case 'set_num1':
