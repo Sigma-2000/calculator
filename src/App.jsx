@@ -145,7 +145,7 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 current: state.current === 0 ?
-                    action.payload.toString() : state.current.toString() + action.payload.toString(), 
+                    action.payload.toString() : state.current + action.payload, 
                 errorMessage: ""
             }
 
