@@ -1,41 +1,24 @@
-import List from "./components/List";
-import Input from "./components/Input";
-import './App.css'
-import { useReducer } from "react";
+import {useState} from "react";
+const Input = ({dispatch})=>{
 
-const fruits = ['pomme', 'banane', "poire", "ananas"]
-const initialState = {
-  fruits : fruits
-}
-const reducer = (state, action) => {
-  switch(action.type) {
-      case 'addItem':
-          return {
-              ...state,
-            fruits: [...state.fruits, action.payload],
-          }
-      case 'removeItem':
-        return{
-          ...state,
-          fruits: state.fruits.filter((fruit, index) => index !== action.payload)
-        }
-      default:
-          return state;
+  const [value, setValue]= useState('');
+
+  const handleChange = (e)=>{
+    console.log(e.target.value)
+    setValue(e.target.value)
   }
-}
 
-function App() {
- 
-  const [state, dispatch] = useReducer(reducer, initialState)
-  console.log(state);
+  const handleAdd = () => {
+    if (!value) return; 
+    dispatch({ type: 'addItem', payload: value });
+    setValue('');
+  };
 
-
-  return (
+  return(
     <>
-      <List fruits={state.fruits} dispatch={dispatch}/>
-      <Input dispatch={dispatch}/>
-    </>
+  <input type={'text'} value={value} onChange={handleChange}></input>
+  <button onClick={handleAdd}>add</button>
+  </>
   )
 }
-
-export default App
+export default Input;

@@ -3,10 +3,10 @@ const List = ({fruits, dispatch})=>
   return (
     <>
     <ul>
-    {fruits.map((fruit, id) => (
-        <li key={id}>
-          {fruit}
-          <button onClick={() => dispatch({ type: 'removeItem', payload: id })}>Delete</button>
+    {fruits.map((fruit) => (
+         <li key={fruit.id}>
+         {fruit.name}
+          <button onClick={() => dispatch({ type: 'removeItem', payload: fruit.id })}>Delete</button>
         </li>
       ))}
 
