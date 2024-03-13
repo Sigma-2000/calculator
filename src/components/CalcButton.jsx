@@ -15,7 +15,7 @@ const CalcButton = ({dispatch}) => {
             type: 'calculate'
         })
     }
-    
+
     const handleDecimalClick = () => {
         dispatch({
             type: 'addDecimal'

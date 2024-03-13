@@ -12,3 +12,23 @@
   justify-content: center;
   align-items: center;
 }
+
+/*.calcButton {
+    margin-left: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 90px;
+    gap: 5px;
+}
+.calcButton button {
+    aspect-ratio: 1/1;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calcButton button:last-of-type {
+    background: orange;
+    text-transform: uppercase;
+}*/
